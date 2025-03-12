@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #0a0a0a;
+    color: #00ff00;
+}
+h1 {
+    text-shadow: 0 0 10px #00ff00;
+}
+.pista {
+    display: none;
+    margin-top: 20px;
+    background: rgba(0, 255, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 15px #00ff00;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ganaste {
+    display: none;
+    font-size: 24px;
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00;
+}
+input, button {
+    background: black;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+button:hover {
+    background: #00ff00;
+    color: black;
+    cursor: pointer;
+}
+p {
+    font-size: 18px;
+}

@@ -5,51 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape Room - Ciberseguridad</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #0a0a0a;
-            color: #00ff00;
-        }
-        h1 {
-            text-shadow: 0 0 10px #00ff00;
-        }
-        .pista {
-            display: none;
-            margin-top: 20px;
-            background: rgba(0, 255, 0, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            border: 2px solid #00ff00;
-            box-shadow: 0 0 15px #00ff00;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .ganaste {
-            display: none;
-            font-size: 24px;
-            color: #ffcc00;
-            text-shadow: 0 0 10px #ffcc00;
-        }
-        input, button {
-            background: black;
-            color: #00ff00;
-            border: 2px solid #00ff00;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        button:hover {
-            background: #00ff00;
-            color: black;
-            cursor: pointer;
-        }
-        p {
-            font-size: 18px;
-        }
-    </style>
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <h1>Escape Room - Ciberseguridad</h1>
@@ -90,57 +47,6 @@
     
     <div class="ganaste" id="ganaste">¡Felicidades, ganaste el juego!</div>
     
-    <script>
-        let tiempoRestante = 20 * 60;
-        let intervalo = setInterval(actualizarCronometro, 1000);
-        document.getElementById('pista1').style.display = 'block';
-        
-        let respuestasCorrectas = ['', '', '', ''];
-        
-        function actualizarCronometro() {
-            let minutos = Math.floor(tiempoRestante / 60);
-            let segundos = tiempoRestante % 60;
-            document.getElementById('cronometro').textContent = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
-            
-            if (tiempoRestante <= 0) {
-                clearInterval(intervalo);
-                alert('Se acabó el tiempo. ¡Intenta de nuevo!');
-                location.reload();
-            }
-            tiempoRestante--;
-        }
-        
-        function verificarRespuesta(num, correcta) {
-            let respuesta = document.getElementById(`respuesta${num}`).value.trim();
-            if (respuesta === correcta) {
-                respuestasCorrectas[num - 1] = respuesta;
-                actualizarCodigoParcial();
-                alert('¡Correcto!');
-                document.getElementById(`pista${num}`).style.display = 'none';
-                if (num < 4) {
-                    document.getElementById(`pista${num + 1}`).style.display = 'block';
-                } else {
-                    document.getElementById('final').style.display = 'block';
-                }
-            } else {
-                alert('Incorrecto, intenta de nuevo.');
-            }
-        }
-        
-        function actualizarCodigoParcial() {
-            document.getElementById('codigoParcial').textContent = respuestasCorrectas.map(n => n || '_').join(' ');
-        }
-        
-        function verificarCodigoFinal() {
-            let codigoIngresado = document.getElementById('codigoFinal').value.trim();
-            let codigoGenerado = respuestasCorrectas.join('');
-            if (codigoIngresado === codigoGenerado) {
-                clearInterval(intervalo);
-                document.getElementById('ganaste').style.display = 'block';
-            } else {
-                alert('Código incorrecto, intenta de nuevo.');
-            }
-        }
-    </script>
+    <script src="funcionalidad.js"></script>
 </body>
 </html>
