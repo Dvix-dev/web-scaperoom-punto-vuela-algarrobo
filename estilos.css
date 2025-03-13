@@ -1,23 +1,50 @@
+@font-face {
+    font-family: 'DS-DIGIT';
+    src: url('./assets/fonts/crono/DS-DIGIB.TTF') format('truetype'); /* URL de la fuente en tu servidor */
+}
+
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+/* body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+} */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin-inline: auto;
+    width: 98%;
+    font-weight: 400;
     text-align: center;
-    background-color: #0a0a0a;
-    color: #00ff00;
+    background-color: black; 
+    color: #0f0;
+    filter: drop-shadow(0 0 10px #0f0);
 }
 h1 {
-    text-shadow: 0 0 10px #00ff00;
+    text-shadow: 0 0 10px #0f0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 35px;
 }
+h2 {
+    text-shadow: 0 0 8px #0f0;
+    font-size: 30px;
+    margin-top: 45px;
+}
+.titular {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 .pista {
     display: none;
-    margin-top: 20px;
-    background: rgba(0, 255, 0, 0.1);
     padding: 20px;
-    border-radius: 10px;
-    border: 2px solid #00ff00;
-    box-shadow: 0 0 15px #00ff00;
-    max-width: 600px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+.pista > p{
+text-align: center;
 }
 .ganaste {
     display: none;
@@ -27,17 +54,79 @@ h1 {
 }
 input, button {
     background: black;
-    color: #00ff00;
-    border: 2px solid #00ff00;
+    color: #0f0;
+    border: 2px solid #0f0;
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
 }
 button:hover {
-    background: #00ff00;
+    background: #0f0;
     color: black;
     cursor: pointer;
 }
 p {
     font-size: 18px;
+}
+
+.box {
+    min-height: 100px;
+}
+.main-box {
+    min-height: 400px;
+}
+.lock {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 190px;
+    margin: auto;
+}
+/* #candadito {
+    filter: drop-shadow(0 0 10px #0f0);
+} */
+.codigo-parcial {
+    position: absolute;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 70px;
+}
+#cronometro {
+    font-family: 'DS-DIGIT', monospace;
+    font-size: 70px;
+    margin-top: -10px;
+}
+
+.icono-contenido {
+    width: 40px;
+    height: 40px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    margin: auto;
+}
+
+/* NO TOCAR AUN (porfi 🙏) */
+.seleccion_equipo {
+    width: 80%;
+    margin: auto;
+}
+
+.container_seleccion_equipo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.equipo {
+    width: 50%;
+    height: 81vh;
 }
