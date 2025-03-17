@@ -68,6 +68,11 @@ input, button {
     border-radius: 5px;
     margin-top: 10px;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 button:hover {
     background: #0f0;
     color: black;
@@ -118,7 +123,7 @@ p {
     margin: auto;
 }
 
-/* NO TOCAR AUN (porfi 🙏) */
+/* SELECCION DE EQUIPO */
 .seleccion_equipo {
     width: 80%;
     margin: auto;
