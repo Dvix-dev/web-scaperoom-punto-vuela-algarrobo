@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room - Ciberseguridad</title>
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="titular">Escape Room - Ciberseguridad</h1>
+
+    <div id="final" class="pista">
+        <p style="font-size: 24px;">Con este código podrás abrir el cofre.</p>
+        <img width="100" height="100" src="./assets/images/chest.png">
+        <p style="font-size: 24px;">Introduce el código final que encontrarás en su interior:</p>
+        <input type="text" autocomplete="off" id="respuestafinal" maxlength="4">
+        <button onclick="verificarCodigoFinal()">Enviar</button>
+    </div>
+
+    <div class="ganaste" id="ganaste">
+        <div><b>¡Felicidades, lo has conseguido!</b><br><br><b>Consejo:</b> ‘Con ciberseguridad, construimos un mundo en línea donde la seguridad es la prioridad número 1’</div>
+        <button onclick="window.location.href = 'index.html'">Reiniciar</button>
+    </div>
+    
+    <div class="container mt-4" id="timer-lock">
+
+        <div class="row">
+            <div class="col-md-6 box">
+                <h2>Tiempo restante: <br><span id="cronometro">20:00</span></h2>
+
+            </div>
+            <div class="col-md-6 box">
+                <div class="lock">
+                    <svg id="candadito" width="190" height="190" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path style="stroke:none;stroke-width:1;stroke-dasharray:none;stroke-linecap:butt;stroke-dashoffset:0;stroke-linejoin:miter;stroke-miterlimit:4;fill:#00ff00;fill-rule:nonzero;opacity:1" transform="translate(-.32 .45)scale(1.54)" d="M8 1C5.797 1 4 2.797 4 5v1h-.5C2.676 6 2 6.676 2 7.5v5c0 .824.676 1.5 1.5 1.5h9c.824 0 1.5-.676 1.5-1.5v-5c0-.824-.676-1.5-1.5-1.5H12V5c0-2.203-1.797-4-4-4m0 1c1.664 0 3 1.336 3 3v1H5V5c0-1.664 1.336-3 3-3M3.5 7h9c.281 0 .5.219.5.5v5c0 .281-.219.5-.5.5h-9a.494.494 0 0 1-.5-.5v-5c0-.281.219-.5.5-.5"/></svg>
+                    <p class="codigo-parcial" id="codigoParcial">_ _ _</p>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div class="row mt-2" id="contenedor-pistas">
+            <div class="col-12 box main-box">
+                <div id="pistas">
+                    <div class="pista" id="pista1">
+                        <p><b>Consejo de ciberseguridad:</b> "Un clic puede cambiarlo todo sed conscientes."</p>
+                        <p><b>Pista:</b> "Hay libros que no encajan, hay que buscar el libro con el PINCEL"</p>
+                        <div class="content-icon" onclick="toggleParagraph()"><img width="100" height="100" src="./assets/images/chair.png"></div>
+                        <p id="extraParagraph" style="display: none;">
+                            <span><b>Pista:</b> Los <b>PINCELES</b> se pueden sentar. Usa tu mente y haz los cálculos con atención para encontrar el primer número.</span>
+                        </p>
+                        <input type="text" autocomplete="off" id="respuesta1" maxlength="1">
+                        <button onclick="verificarRespuesta(1, '9')">Enviar</button>
+                    </div>
+                    <div class="pista" id="pista2">
+                        <p><b>Consejo de ciberseguridad:</b> "Piensa dos veces, haz clic una vez"</p>
+                        <p><b>Pista 2:</b> "El mensaje secreto se esconde entre las letras.
+                            Coloca la rejilla y gírala lentamente...
+                            <br>hasta que el mensaje oculto revele su misterio."</p>
+                        <div class="content-icon" onclick="toggleParagraph2()"><img width="100" height="100" src="./assets/images/tree.png"></div>
+                        <p id="extraParagraph2" style="display: none;">
+                            <span><b>Consejo de ciberseguridad:</b> La ciberseguridad es vital, lo importante a dentro, lo peligroso afuera 
+                                </span><br>
+                            <span><b>Pista:</b> Las hojas de este árbol,
+                                tan frondosas y verdes,
+                                susurran un secreto
+                                que nunca ha sido visto.
+                                
+                                Las hojas de este árbol
+                                hablan con certeza,
+                                revelando misterios
+                                que nadie conocía.</span>
+                        </p>
+                        <input type="text" autocomplete="off" id="respuesta2" maxlength="1">
+                        <button onclick="verificarRespuesta(2, '8')">Enviar</button>
+                    </div>
+                    <div class="pista" id="pista3">
+                        <span><b>Consejo de ciberseguridad:</b> "Contraseña fuerte, defensa sólida"</span><br>
+                        <span><b>Pista 3:</b>"Descubre el mensaje oculto de signos misteriosos que en la mesa encontrareis"</span>
+
+                        <div class="content-icon" onclick="toggleParagraph3()"><img width="100" height="100" src="./assets/images/skeleton.png"></div>
+                        <p id="extraParagraph3" style="display: none;">
+                            <span><b>Consejo de ciberseguridad:</b>"La ventana digital debe estar siempre protegida con la cerradura de la ciberseguridad"</span><br>
+                            <span><b>Pista:</b>"Una pista oculta en la ventana, un secreto que nadie sabe"</span>
+                        </p>
+                        <input type="text" autocomplete="off" id="respuesta3" maxlength="1">
+                        <button onclick="verificarRespuesta(3, '5')">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="funcionalidad.js"></script>
+</body>
+</html>

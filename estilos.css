@@ -1,16 +1,11 @@
+/* IMPORTAR FUENTES */
 @font-face {
     font-family: 'DS-DIGIT';
     src: url('./assets/fonts/crono/DS-DIGIB.TTF') format('truetype'); /* URL de la fuente en tu servidor */
 }
-
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
-/* body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-} */
-
+/* ESTILOS */
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin-inline: auto;
@@ -19,7 +14,7 @@ body {
     text-align: center;
     background-color: black; 
     color: #0f0;
-    filter: drop-shadow(0 0 10px #0f0);
+    /* filter: drop-shadow(0 0 10px #0f0); */
 }
 h1 {
     text-shadow: 0 0 10px #0f0;
@@ -46,11 +41,24 @@ h2 {
 .pista > p{
 text-align: center;
 }
+.content-icon img {
+    cursor: pointer;
+}
 .ganaste {
     display: none;
+    margin-top: 10rem;
     font-size: 24px;
-    color: #ffcc00;
-    text-shadow: 0 0 10px #ffcc00;
+    color: #fc0;
+    text-shadow: 0 0 10px #fc0;
+}
+.ganaste > button {
+    color: #fc0;
+    border: 2px solid #fc0;
+}
+.ganaste > button:hover {
+    color: #000;
+    border: 2px solid #fc0;
+    background-color: #fc0;
 }
 input, button {
     background: black;
@@ -84,9 +92,6 @@ p {
     height: 190px;
     margin: auto;
 }
-/* #candadito {
-    filter: drop-shadow(0 0 10px #0f0);
-} */
 .codigo-parcial {
     position: absolute;
     font-size: 32px;
@@ -121,12 +126,48 @@ p {
 
 .container_seleccion_equipo {
     display: flex;
-    flex-wrap: wrap;
+    position: relative;
     flex-direction: row;
-    justify-content: space-between;
+    gap: 10px;
 }
 
-.equipo {
-    width: 50%;
-    height: 81vh;
+.container_seleccion_equipo .equipo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    overflow: hidden;
+    width: 0px;
+    height: 78vh;
+    flex-grow: 1;
+    opacity: 0.8;
+    object-fit: cover;
+    transition: all ease-in-out 0.5s;
+}
+
+.equipo > * {
+    animation: neonBlink 1s infinite alternate;
+}
+
+/* .equipo img {
+    animation: neonBlink 1s infinite alternate;
+} */
+
+.container_seleccion_equipo .equipo:hover {
+    width: 35%;
+    cursor: pointer;
+}
+
+/* ANIMACIONES */
+@keyframes neonBlink {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px #0f0) drop-shadow(0 0 20px #0f0);
+        opacity: 1;
+    }
+    50% {
+        filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 10px #0f0);
+        opacity: 0.6;
+    }
 }
