@@ -162,13 +162,23 @@ p {
     animation: neonBlink 1s infinite alternate;
 }
 
-/* .equipo img {
-    animation: neonBlink 1s infinite alternate;
-} */
-
 .container_seleccion_equipo .equipo:hover {
     width: 35%;
     cursor: pointer;
+}
+
+/* DESCARGAR */
+.app-download {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    width: fit-content;
+    margin: 60px auto;
+    padding: 20px;
+    border: 1px solid rgb(0, 164, 0);
+    background-color: rgb(55 55 55 / 90%);
 }
 
 /* ANIMACIONES */
